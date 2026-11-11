@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1800" viewBox="0 0 1100 1800">
+    <rect width="1100" height="1800" fill="#f5f5f2" />
+    <style>
+        text {
+            font-family: Arial, sans-serif;
+            fill: #222;
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .small {
+            font-size: 15px;
+            fill: #555;
+        }
+        .label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .body {
+            font-size: 17px;
+        }
+        .box {
+            fill: #fff;
+            stroke: #666;
+            stroke-width: 1.5;
+        }
+        .line {
+            stroke: #aaa;
+            stroke-width: 2;
+        }
+        .num {
+            fill: #333;
+        }
+        .numtext {
+            fill: white;
+            font-size: 17px;
+            font-weight: bold;
+        }
+    </style>
+    <text x="55" y="60" class="title">TáltosGains · Mobile homepage wireframe</text>
+    <text x="55" y="95" class="small">
+        Typical smartphone: 390 px wide · Single-column flow · Vertical scrolling
+    </text>
+    <rect x="45" y="130" width="410" height="1600" rx="30" fill="#ddd" stroke="#333" stroke-width="2" />
+    <rect x="55" y="145" width="390" height="1570" rx="22" fill="white" />
+    <rect x="55" y="160" width="390" height="75" fill="#e6e6e6" stroke="#999" />
+    <text x="75" y="193" class="label">✳ TáltosGains</text>
+    <text x="75" y="215" class="small">Stronger. A little softer.</text>
+    <rect x="385" y="177" width="42" height="36" fill="#fff" stroke="#999" />
+    <text x="394" y="202" class="body">☰</text>
+    <circle cx="485" cy="195" r="16" class="num" />
+    <text x="480" y="201" class="numtext">1</text>
+    <text x="520" y="200" class="label">Header / identity + navigation</text>
+    <text x="520" y="232" class="body">Styled channel name and flower icon.</text>
+    <text x="520" y="257" class="body">Hamburger opens all six page links.</text>
+    <text x="520" y="282" class="body">Menu stays collapsed on a smartphone.</text>
+    <line x1="445" y1="195" x2="467" y2="195" class="line" />
+    <rect x="55" y="235" width="390" height="460" fill="#e1e1e1" stroke="#999" />
+    <path d="M55 235L445 695M445 235L55 695" stroke="#c4c4c4" />
+    <text x="80" y="285" class="small">A QUIETER KIND OF STRONG</text>
+    <text x="80" y="335" class="label">Train for your mind.</text>
+    <text x="80" y="368" class="label">The gains will follow.</text>
+    <text x="80" y="420" class="body">Short introduction to the channel.</text>
+    <text x="80" y="450" class="body">No perfect routines. No gym ego.</text>
+    <rect x="80" y="485" width="290" height="48" fill="#bbb" stroke="#999" />
+    <text x="103" y="516" class="body">Find your next watch</text>
+    <rect x="80" y="550" width="290" height="48" fill="#fff" stroke="#999" />
+    <text x="103" y="580" class="body">Meet TáltosGains</text>
+    <text x="80" y="660" class="body">● ○ ○</text>
+    <text x="310" y="660" class="body">Ⅱ ← →</text>
+    <circle cx="485" cy="350" r="16" class="num" />
+    <text x="480" y="356" class="numtext">2</text>
+    <text x="520" y="355" class="label">Bootstrap carousel</text>
+    <text x="520" y="387" class="body">Three rotating photographs with text.</text>
+    <text x="520" y="412" class="body">Headline, introduction and two actions.</text>
+    <text x="520" y="437" class="body">Indicators, previous/next and pause.</text>
+    <text x="520" y="462" class="body">Auto-play respects reduced motion.</text>
+    <line x1="445" y1="350" x2="467" y2="350" class="line" />
+    <rect x="55" y="695" width="390" height="112" fill="#eee" stroke="#999" />
+    <text x="80" y="727" class="body">♡ Mind first. Muscles second.</text>
+    <text x="80" y="757" class="body">↻ Systems over goals.</text>
+    <text x="80" y="787" class="body">✳ Rest without guilt.</text>
+    <circle cx="485" cy="750" r="16" class="num" />
+    <text x="480" y="756" class="numtext">3</text>
+    <text x="520" y="755" class="label">Philosophy strip</text>
+    <text x="520" y="787" class="body">Three short principles stack vertically.</text>
+    <text x="520" y="812" class="body">Icons add recognition, not extra clutter.</text>
+    <line x1="445" y1="750" x2="467" y2="750" class="line" />
+    <text x="80" y="845" class="small">HEY, WELCOME TO MY CORNER</text>
+    <text x="80" y="885" class="label">Less hustle. More human.</text>
+    <text x="80" y="925" class="body">Introductory paragraph about the</text>
+    <text x="80" y="952" class="body">creator, training and a quieter mind.</text>
+    <text x="80" y="995" class="body">A little more about the story →</text>
+    <circle cx="485" cy="900" r="16" class="num" />
+    <text x="480" y="906" class="numtext">4</text>
+    <text x="520" y="905" class="label">Channel introduction</text>
+    <text x="520" y="937" class="body">Heading, a short personal introduction,</text>
+    <text x="520" y="962" class="body">and a link to the full story page.</text>
+    <text x="520" y="987" class="body">Desktop columns become one column.</text>
+    <line x1="445" y1="900" x2="467" y2="900" class="line" />
+    <rect x="55" y="1030" width="390" height="435" fill="#eee" stroke="#999" />
+    <text x="80" y="1065" class="label">Real life. Real reps.</text>
+    <text x="80" y="1095" class="small">All the stories →</text>
+    <rect x="80" y="1115" width="105" height="80" fill="#ccc" stroke="#999" />
+    <text x="116" y="1160" class="body">▷</text>
+    <text x="205" y="1143" class="label">Channel story 01</text>
+    <text x="205" y="1170" class="small">Title + short summary</text>
+    <rect x="80" y="1220" width="105" height="80" fill="#ccc" stroke="#999" />
+    <text x="116" y="1265" class="body">▷</text>
+    <text x="205" y="1248" class="label">Channel story 02</text>
+    <text x="205" y="1275" class="small">Title + short summary</text>
+    <rect x="80" y="1325" width="105" height="80" fill="#ccc" stroke="#999" />
+    <text x="116" y="1370" class="body">▷</text>
+    <text x="205" y="1353" class="label">Channel story 03</text>
+    <text x="205" y="1380" class="small">Title + short summary</text>
+    <text x="80" y="1440" class="small">Cards expand vertically in the final site.</text>
+    <circle cx="485" cy="1200" r="16" class="num" />
+    <text x="480" y="1206" class="numtext">5</text>
+    <text x="520" y="1205" class="label">Video showcase</text>
+    <text x="520" y="1237" class="body">Three story cards with themed images,</text>
+    <text x="520" y="1262" class="body">titles and summaries. Each links to</text>
+    <text x="520" y="1287" class="body">its matching section on the Videos page.</text>
+    <text x="520" y="1312" class="body">Final cards are full-width and stacked;</text>
+    <text x="520" y="1337" class="body">shown condensed here for readability.</text>
+    <line x1="445" y1="1200" x2="467" y2="1200" class="line" />
+    <rect x="55" y="1465" width="390" height="155" fill="#ddd" stroke="#999" />
+    <text x="80" y="1500" class="label">Your pace is a good pace.</text>
+    <text x="80" y="1532" class="small">Make a small plan for your week.</text>
+    <rect x="80" y="1550" width="230" height="46" fill="#bbb" stroke="#999" />
+    <text x="100" y="1579" class="body">Build your reset →</text>
+    <circle cx="485" cy="1500" r="16" class="num" />
+    <text x="480" y="1506" class="numtext">6</text>
+    <text x="520" y="1505" class="label">Reset invitation</text>
+    <text x="520" y="1537" class="body">Clear next step to the responsive form.</text>
+    <text x="520" y="1562" class="body">Visitors save a plan on their device.</text>
+    <line x1="445" y1="1500" x2="467" y2="1500" class="line" />
+    <rect x="55" y="1620" width="390" height="80" fill="#eee" stroke="#999" />
+    <text x="80" y="1650" class="label">TáltosGains · YouTube ↗</text>
+    <text x="80" y="1680" class="small">Story · Reset · Copyright</text>
+    <circle cx="485" cy="1650" r="16" class="num" />
+    <text x="480" y="1656" class="numtext">7</text>
+    <text x="520" y="1655" class="label">Footer</text>
+    <text x="520" y="1687" class="body">Channel link, supporting navigation</text>
+    <text x="520" y="1712" class="body">and copyright. All links remain usable.</text>
+    <line x1="445" y1="1650" x2="467" y2="1650" class="line" />
+    <text x="55" y="1770" class="small">
+        Inner pages add breadcrumb navigation below the header. This drawing describes structure, not final
+        colors.
+    </text>
+</svg>
