@@ -1,0 +1,14 @@
+.DS_Store
+.idea/
+submission/
+
+# Local credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.aws/
+.codex/
+.agents/
+__pycache__/
