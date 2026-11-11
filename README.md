@@ -27,7 +27,7 @@ Then visit http://127.0.0.1:8080. No installation or build step is needed. Boots
 | Bootstrap modal | Four “Story notes” buttons on the Videos page open a modal with details |
 | At least three tabs | Off days page: Rest & reset, Outside time, Headspace |
 | Mobile wireframe + description | `docs/mobile-wireframe.svg` and `docs/wireframe.html`, with seven described sections |
-| Hosting URL TXT | `PROJECT_URL.txt` (filled in after publishing) |
+| Hosting URL TXT | `PROJECT_URL.txt` |
 | Submission ZIP | `submission/TaltosGains-local.zip`, rebuilt after every change |
 
 ## Content and behavior
@@ -40,7 +40,9 @@ Then visit http://127.0.0.1:8080. No installation or build step is needed. Boots
 
 ## Publishing with GitHub Pages
 
-Publish the files from the repository root, keeping the folder structure. `.nojekyll` is included. After deployment, put the public URL into `PROJECT_URL.txt` and rebuild the ZIP.
+Website: https://pecikks.github.io/YTWebsite/
+
+GitHub Pages publishes the `main` branch from the repository root. `.nojekyll` is included.
 
 ## Rebuild the ZIP
 
