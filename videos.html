@@ -8,6 +8,7 @@
             content="TáltosGains — honest gym stories, functional movement and guilt-free recovery. Train for your mind. Live at your own pace."
         />
         <meta name="theme-color" content="#171917" />
+        <script src="js/theme.js"></script>
         <title>Videos · TáltosGains</title>
         <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
@@ -34,6 +35,10 @@
                     aria-label="Toggle navigation"
                 >
                     <span class="navbar-toggler-icon"></span>
+                </button>
+                <button type="button" id="themeToggle" class="btn btn-outline-light theme-toggle"
+                        aria-label="Switch to light mode" title="Switch to light mode" hidden>
+                    <i class="bi bi-sun" aria-hidden="true"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto">
@@ -101,15 +106,21 @@
                 <article id="video-1" class="video-feature row gy-4 align-items-center">
                     <div class="col-md-5">
                         <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube-nocookie.com/embed/dgn22HJKLXc"
-                                title="I Lost My Gains (The Reality of Starting Over)"
-                                class="border-0"
-                                loading="lazy"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen
-                            ></iframe>
+                            <button class="video-preview" type="button" aria-label="Play I Lost My Gains (The Reality of Starting Over)" hidden>
+                                <img src="assets/images/starting-over.jpg" alt="" loading="lazy" />
+                                <span class="play-circle"><i class="bi bi-play-fill" aria-hidden="true"></i></span>
+                            </button>
+                            <template>
+                                <iframe
+                                    src="https://www.youtube-nocookie.com/embed/dgn22HJKLXc"
+                                    title="I Lost My Gains (The Reality of Starting Over)"
+                                    class="border-0"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </template>
                         </div>
                     </div>
                     <div class="col-md-7">
@@ -144,15 +155,21 @@
                 <article id="video-2" class="video-feature row gy-4 align-items-center">
                     <div class="col-md-5">
                         <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube-nocookie.com/embed/GtP09oq7qAE"
-                                title="The No-Goal Workout"
-                                class="border-0"
-                                loading="lazy"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen
-                            ></iframe>
+                            <button class="video-preview" type="button" aria-label="Play The No-Goal Workout" hidden>
+                                <img src="assets/images/gym-row.jpg" alt="" loading="lazy" />
+                                <span class="play-circle"><i class="bi bi-play-fill" aria-hidden="true"></i></span>
+                            </button>
+                            <template>
+                                <iframe
+                                    src="https://www.youtube-nocookie.com/embed/GtP09oq7qAE"
+                                    title="The No-Goal Workout"
+                                    class="border-0"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </template>
                         </div>
                     </div>
                     <div class="col-md-7">
@@ -187,15 +204,21 @@
                 <article id="video-3" class="video-feature row gy-4 align-items-center">
                     <div class="col-md-5">
                         <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube-nocookie.com/embed/LU6AXlAYR7c"
-                                title="Training for Real Life (The Functional Comeback)"
-                                class="border-0"
-                                loading="lazy"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen
-                            ></iframe>
+                            <button class="video-preview" type="button" aria-label="Play Training for Real Life (The Functional Comeback)" hidden>
+                                <img src="assets/images/everyday-strength.jpg" alt="" loading="lazy" />
+                                <span class="play-circle"><i class="bi bi-play-fill" aria-hidden="true"></i></span>
+                            </button>
+                            <template>
+                                <iframe
+                                    src="https://www.youtube-nocookie.com/embed/LU6AXlAYR7c"
+                                    title="Training for Real Life (The Functional Comeback)"
+                                    class="border-0"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </template>
                         </div>
                     </div>
                     <div class="col-md-7">
@@ -230,15 +253,21 @@
                 <article id="video-4" class="video-feature row gy-4 align-items-center">
                     <div class="col-md-5">
                         <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube-nocookie.com/embed/Xp8mwcsPGMs"
-                                title="The Worst Exercise in the Gym (Eating the Frog)"
-                                class="border-0"
-                                loading="lazy"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen
-                            ></iframe>
+                            <button class="video-preview" type="button" aria-label="Play The Worst Exercise in the Gym (Eating the Frog)" hidden>
+                                <img src="assets/images/gym-session.jpg" alt="" loading="lazy" />
+                                <span class="play-circle"><i class="bi bi-play-fill" aria-hidden="true"></i></span>
+                            </button>
+                            <template>
+                                <iframe
+                                    src="https://www.youtube-nocookie.com/embed/Xp8mwcsPGMs"
+                                    title="The Worst Exercise in the Gym (Eating the Frog)"
+                                    class="border-0"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </template>
                         </div>
                     </div>
                     <div class="col-md-7">

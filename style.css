@@ -93,7 +93,14 @@ em {
     padding-bottom: 90px;
 }
 
+html {
+    scroll-padding-top: 120px;
+}
+
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
     border-bottom: 1px solid var(--line);
     background: var(--ink);
 }
@@ -514,7 +521,6 @@ header {
     border-top: 1px solid var(--line);
     padding: 40px 0;
     margin-bottom: 20px;
-    scroll-margin-top: 20px;
 }
 
 .video-feature h2 {
@@ -838,10 +844,15 @@ footer p {
 
 /* Tablets */
 @media (max-width: 991px) {
+    html {
+        scroll-padding-top: 102px;
+    }
     .navbar {
         min-height: 86px;
     }
     .navbar-collapse {
+        max-height: calc(100dvh - 86px);
+        overflow-y: auto;
         padding-top: 20px;
         padding-bottom: 15px;
     }
@@ -1074,4 +1085,247 @@ footer p {
 
 .photo-gym-row {
     object-position: 38% center;
+}
+
+/* Theme button and light palette */
+.theme-toggle {
+    padding: 8px 12px;
+}
+
+@media (min-width: 992px) {
+    .theme-toggle {
+        order: 1;
+        margin-left: 8px;
+    }
+}
+
+[data-bs-theme="light"] {
+    --ink: #fff;
+    --panel: #f7f5f2;
+    --paper: #242522;
+    --muted: #51564c;
+    --accent: #ad3038;
+    --accent-soft: #81242a;
+    --accent-muted: #ad3038;
+    --line: #ddd8d1;
+}
+
+[data-bs-theme="light"] .navbar,
+[data-bs-theme="light"] .nav-tabs {
+    --bs-navbar-color: var(--muted);
+    --bs-nav-link-color: var(--muted);
+}
+
+[data-bs-theme="light"] .manifesto-strip,
+[data-bs-theme="light"] .stories-section,
+[data-bs-theme="light"] .reset-banner {
+    background: var(--panel);
+}
+
+[data-bs-theme="light"] .manifesto-strip span,
+[data-bs-theme="light"] .form-control::placeholder,
+[data-bs-theme="light"] .form-text,
+[data-bs-theme="light"] .footer-bottom {
+    color: var(--muted);
+}
+
+[data-bs-theme="light"] .form-control,
+[data-bs-theme="light"] .form-select,
+[data-bs-theme="light"] .input-group-text {
+    background-color: var(--ink);
+    border-color: #8b8e84;
+}
+
+[data-bs-theme="light"] .table {
+    --bs-table-hover-bg: #eeeae4;
+}
+
+[data-bs-theme="light"] .btn-primary,
+[data-bs-theme="light"] .btn-secondary {
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #fff;
+}
+
+[data-bs-theme="light"] .btn-primary,
+[data-bs-theme="light"] .skip-link {
+    color: #fff;
+}
+
+/* Keep text and controls legible over the carousel photos. */
+[data-bs-theme="light"] #homeCarousel {
+    --paper: #f1eee7;
+}
+
+[data-bs-theme="light"] .hero-image {
+    filter: brightness(1.35);
+}
+
+[data-bs-theme="light"] .hero-shade {
+    background:
+        linear-gradient(90deg, rgb(13 16 13 / 70%), rgb(13 16 13 / 43%) 46%, transparent 100%),
+        linear-gradient(0deg, rgb(13 16 13 / 40%), transparent 28%);
+}
+
+@media (max-width: 575px) {
+    [data-bs-theme="light"] .hero-shade {
+        background:
+            linear-gradient(90deg, rgb(13 16 13 / 65%), rgb(13 16 13 / 25%)),
+            linear-gradient(0deg, rgb(13 16 13 / 48%), transparent 32%);
+    }
+}
+
+[data-bs-theme="light"] .hero-content {
+    text-shadow: 0 1px 5px rgb(0 0 0 / 80%);
+}
+
+[data-bs-theme="light"] .hero-content .btn {
+    text-shadow: none;
+}
+
+[data-bs-theme="light"] #homeCarousel em,
+[data-bs-theme="light"] #homeCarousel .eyebrow {
+    color: #ff8c8c;
+}
+
+[data-bs-theme="light"] #homeCarousel .btn-outline-light {
+    --bs-btn-hover-color: #171917;
+}
+
+/* Keep the movement table readable on narrow screens. */
+@media (max-width: 767.98px) {
+    #movementTable .movement-wide-column {
+        display: none;
+    }
+
+    #movementTable tbody th {
+        min-width: 0;
+    }
+
+    #movementTable td,
+    #movementTable th {
+        padding: 10px 8px;
+        overflow-wrap: anywhere;
+    }
+
+    #movementTable .movement-detail-button {
+        display: block;
+        min-height: 44px;
+        margin-top: 6px;
+    }
+
+    #movementTable_wrapper .dt-search input {
+        box-sizing: border-box;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #movementTable_wrapper .pagination {
+        flex-wrap: wrap;
+    }
+}
+
+.movement-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 12px;
+}
+
+.reset-group + .reset-group {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+}
+
+.reset-group > legend {
+    float: none;
+    margin-bottom: 12px;
+}
+
+.video-preview {
+    padding: 0;
+    border: 0;
+    background: var(--panel);
+}
+
+.video-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-preview .play-circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(13 16 13 / 80%);
+}
+
+@media (max-width: 575px) {
+    #homeCarousel .carousel-item {
+        height: auto;
+    }
+
+    #homeCarousel .hero-image {
+        position: static;
+        display: block;
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+
+    #homeCarousel .hero-shade {
+        display: none;
+    }
+
+    #homeCarousel .hero-content {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        background: var(--panel);
+    }
+
+    #homeCarousel .hero-content h1 {
+        font-size: clamp(2rem, 8vw, 2.9rem);
+    }
+
+    #homeCarousel .hero-description {
+        color: var(--muted);
+    }
+
+    #homeCarousel .carousel-bottom {
+        position: static;
+        transform: none;
+        gap: 8px;
+        padding-top: 10px;
+        padding-bottom: 14px;
+    }
+
+    #homeCarousel .carousel-indicators {
+        margin-right: auto;
+    }
+
+    #homeCarousel .carousel-actions {
+        margin-left: 0;
+    }
+
+    #homeCarousel .carousel-actions .btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    [data-bs-theme="light"] #homeCarousel {
+        --paper: #242522;
+    }
+
+    [data-bs-theme="light"] #homeCarousel .hero-content {
+        text-shadow: none;
+    }
+
+    [data-bs-theme="light"] #homeCarousel em,
+    [data-bs-theme="light"] #homeCarousel .eyebrow {
+        color: var(--accent);
+    }
+
+    [data-bs-theme="light"] #homeCarousel .btn-outline-light {
+        --bs-btn-hover-color: var(--ink);
+    }
 }

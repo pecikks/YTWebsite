@@ -8,6 +8,7 @@
             content="TáltosGains — honest gym stories, functional movement and guilt-free recovery. Train for your mind. Live at your own pace."
         />
         <meta name="theme-color" content="#171917" />
+        <script src="js/theme.js"></script>
         <title>Movement library · TáltosGains</title>
         <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
@@ -35,6 +36,10 @@
                     aria-label="Toggle navigation"
                 >
                     <span class="navbar-toggler-icon"></span>
+                </button>
+                <button type="button" id="themeToggle" class="btn btn-outline-light theme-toggle"
+                        aria-label="Switch to light mode" title="Switch to light mode" hidden>
+                    <i class="bi bi-sun" aria-hidden="true"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto">
@@ -108,6 +113,19 @@
                         60
                         <small>MOVEMENT IDEAS</small>
                     </span>
+                </div>
+                <div id="movementFilters" class="mb-3" hidden>
+                    <div class="movement-filters">
+                        <div>
+                            <label class="form-label" for="patternFilter">Pattern</label>
+                            <select class="form-select" id="patternFilter">
+                                <option value="">All patterns</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-outline-light" type="button" id="clearMovementFilters" hidden>
+                            Clear filters
+                        </button>
+                    </div>
                 </div>
                 <div class="table-shell">
                     <div class="table-responsive">
@@ -564,6 +582,27 @@
                 </div>
             </section>
         </main>
+        <div class="modal fade" id="movementDetails" tabindex="-1"
+             aria-labelledby="movementDetailsTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-4" id="movementDetailsTitle">Movement details</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <dl class="mb-0">
+                            <dt>Pattern</dt>
+                            <dd id="movementPattern"></dd>
+                            <dt>Equipment</dt>
+                            <dd id="movementEquipment"></dd>
+                            <dt>Everyday purpose</dt>
+                            <dd id="movementPurpose" class="mb-0"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Footer -->
         <footer>
             <div class="container">

@@ -8,6 +8,7 @@
             content="TáltosGains — honest gym stories, functional movement and guilt-free recovery. Train for your mind. Live at your own pace."
         />
         <meta name="theme-color" content="#171917" />
+        <script src="js/theme.js"></script>
         <title>Your reset · TáltosGains</title>
         <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
@@ -34,6 +35,10 @@
                     aria-label="Toggle navigation"
                 >
                     <span class="navbar-toggler-icon"></span>
+                </button>
+                <button type="button" id="themeToggle" class="btn btn-outline-light theme-toggle"
+                        aria-label="Switch to light mode" title="Switch to light mode" hidden>
+                    <i class="bi bi-sun" aria-hidden="true"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto">
@@ -98,204 +103,220 @@
                 <div class="row gy-5">
                     <div class="col-lg-8">
                         <!-- Reset form - the plan is saved in this browser -->
+                        <a href="#name" id="continueReset" class="btn btn-outline-primary mb-3" hidden>
+                            Continue your saved plan
+                        </a>
                         <form id="resetForm" class="reset-form needs-validation" novalidate>
                             <p class="form-text mb-4">
                                 * Required fields. Your plan stays on this device; nothing is sent to the
                                 channel.
                             </p>
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label class="form-label" for="name">What should we call you? *</label>
-                                    <div class="input-group has-validation">
-                                        <span class="input-group-text">
-                                            <i class="bi bi-person" aria-hidden="true"></i>
-                                        </span>
-                                        <input
-                                            class="form-control"
-                                            id="name"
-                                            name="name"
-                                            type="text"
-                                            required
-                                            maxlength="60"
-                                            autocomplete="given-name"
-                                            aria-describedby="name-help"
-                                        />
-                                        <div class="invalid-feedback">Please tell us what to call you.</div>
-                                    </div>
-                                    <div class="form-text" id="name-help">
-                                        A first name or nickname is enough.
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="week">Week starting *</label>
-                                    <input class="form-control" id="week" name="week" type="date" required />
-                                    <div class="invalid-feedback">Please pick the first day of your week.</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="focus">Make room for…</label>
-                                    <select class="form-select" id="focus" name="focus">
-                                        <option>Enjoying movement</option>
-                                        <option>Starting over</option>
-                                        <option>Everyday strength</option>
-                                        <option>More recovery</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="experience">
-                                        Your training experience
-                                    </label>
-                                    <select class="form-select" id="experience" name="experience">
-                                        <option>Finding my feet</option>
-                                        <option>Getting back into it</option>
-                                        <option>A familiar routine</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="sessions">
-                                        Movement sessions this week *
-                                    </label>
-                                    <input
-                                        class="form-control"
-                                        id="sessions"
-                                        name="sessions"
-                                        type="number"
-                                        min="0"
-                                        max="7"
-                                        value="2"
-                                        required
-                                        aria-describedby="sessions-help"
-                                    />
-                                    <div class="invalid-feedback">Choose a number from 0 to 7.</div>
-                                    <div class="form-text" id="sessions-help">
-                                        Zero is a valid plan for a recovery week.
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="minutes">Time per session *</label>
-                                    <div class="input-group has-validation">
-                                        <input
-                                            class="form-control"
-                                            type="number"
-                                            id="minutes"
-                                            name="minutes"
-                                            min="5"
-                                            max="180"
-                                            step="5"
-                                            value="30"
-                                            required
-                                        />
-                                        <span class="input-group-text">minutes</span>
-                                        <div class="invalid-feedback">Choose 5 to 180 minutes, in steps of 5.</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="place">Your usual space</label>
-                                    <select class="form-select" id="place" name="place">
-                                        <option>At home</option>
-                                        <option>At the gym</option>
-                                        <option>Outside</option>
-                                        <option>A mix of places</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="energy">Energy right now</label>
-                                    <select class="form-select" id="energy" name="energy">
-                                        <option>Low — keep it gentle</option>
-                                        <option>Somewhere in the middle</option>
-                                        <option>Ready to move</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="recovery">An off-day plan</label>
-                                    <select class="form-select" id="recovery" name="recovery">
-                                        <option>A slow walk</option>
-                                        <option>Gaming / CS2</option>
-                                        <option>A book or film</option>
-                                        <option>Time with someone</option>
-                                        <option>Simply resting</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="smallWin">One small win to aim for</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">
-                                            <i class="bi bi-star" aria-hidden="true"></i>
-                                        </span>
-                                        <input
-                                            class="form-control"
-                                            id="smallWin"
-                                            name="smallWin"
-                                            type="text"
-                                            maxlength="120"
-                                            placeholder="Show up without judging the session"
-                                        />
-                                    </div>
-                                </div>
-                                <fieldset class="col-12">
-                                    <legend class="fs-6">When does movement fit best?</legend>
-                                    <div class="d-flex gap-4 flex-wrap">
-                                        <div class="form-check">
+                            <fieldset class="reset-group">
+                                <legend class="h5">Your week</legend>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="name">What should we call you? *</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text">
+                                                <i class="bi bi-person" aria-hidden="true"></i>
+                                            </span>
                                             <input
-                                                class="form-check-input"
-                                                type="radio"
-                                                name="time"
-                                                id="morning"
-                                                value="Morning"
+                                                class="form-control"
+                                                id="name"
+                                                name="name"
+                                                type="text"
+                                                required
+                                                maxlength="60"
+                                                autocomplete="given-name"
+                                                aria-describedby="name-help"
                                             />
-                                            <label class="form-check-label" for="morning">Morning</label>
+                                            <div class="invalid-feedback">Please tell us what to call you.</div>
                                         </div>
-                                        <div class="form-check">
-                                            <input
-                                                class="form-check-input"
-                                                type="radio"
-                                                name="time"
-                                                id="evening"
-                                                value="Evening"
-                                            />
-                                            <label class="form-check-label" for="evening">Evening</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input
-                                                class="form-check-input"
-                                                type="radio"
-                                                name="time"
-                                                id="flexible"
-                                                value="Whenever it fits"
-                                                checked
-                                            />
-                                            <label class="form-check-label" for="flexible">
-                                                Whenever it fits
-                                            </label>
+                                        <div class="form-text" id="name-help">
+                                            A first name or nickname is enough.
                                         </div>
                                     </div>
-                                </fieldset>
-                                <div class="col-12">
-                                    <label class="form-label" for="notes">A note to yourself</label>
-                                    <textarea
-                                        class="form-control"
-                                        id="notes"
-                                        name="notes"
-                                        rows="4"
-                                        maxlength="1000"
-                                        placeholder="What would make this week feel a little easier?"
-                                    ></textarea>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="week">Week starting *</label>
+                                        <input class="form-control" id="week" name="week" type="date" required />
+                                        <div class="invalid-feedback">Please pick the first day of your week.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="focus">Make room for…</label>
+                                        <select class="form-select" id="focus" name="focus">
+                                            <option>Enjoying movement</option>
+                                            <option>Starting over</option>
+                                            <option>Everyday strength</option>
+                                            <option>More recovery</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="col-12 form-check-wrap">
-                                    <div class="form-check">
-                                        <input
-                                            class="form-check-input"
-                                            type="checkbox"
-                                            id="permission"
-                                            name="permission"
-                                            required
-                                        />
-                                        <label class="form-check-label" for="permission">
-                                            I understand this plan will be saved only in this browser. *
+                            </fieldset>
+                            <fieldset class="reset-group">
+                                <legend class="h5">Training</legend>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="experience">
+                                            Your training experience
                                         </label>
-                                        <div class="invalid-feedback">Please confirm before saving.</div>
+                                        <select class="form-select" id="experience" name="experience">
+                                            <option>Finding my feet</option>
+                                            <option>Getting back into it</option>
+                                            <option>A familiar routine</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="sessions">
+                                            Movement sessions this week *
+                                        </label>
+                                        <input
+                                            class="form-control"
+                                            id="sessions"
+                                            name="sessions"
+                                            type="number"
+                                            min="0"
+                                            max="7"
+                                            value="2"
+                                            required
+                                            aria-describedby="sessions-help"
+                                        />
+                                        <div class="invalid-feedback">Choose a number from 0 to 7.</div>
+                                        <div class="form-text" id="sessions-help">
+                                            Zero is a valid plan for a recovery week.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="minutes">Time per session *</label>
+                                        <div class="input-group has-validation">
+                                            <input
+                                                class="form-control"
+                                                type="number"
+                                                id="minutes"
+                                                name="minutes"
+                                                min="5"
+                                                max="180"
+                                                step="5"
+                                                value="30"
+                                                required
+                                            />
+                                            <span class="input-group-text">minutes</span>
+                                            <div class="invalid-feedback">Choose 5 to 180 minutes, in steps of 5.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="place">Your usual space</label>
+                                        <select class="form-select" id="place" name="place">
+                                            <option>At home</option>
+                                            <option>At the gym</option>
+                                            <option>Outside</option>
+                                            <option>A mix of places</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
+                            </fieldset>
+                            <fieldset class="reset-group">
+                                <legend class="h5">Recovery</legend>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="energy">Energy right now</label>
+                                        <select class="form-select" id="energy" name="energy">
+                                            <option>Low — keep it gentle</option>
+                                            <option>Somewhere in the middle</option>
+                                            <option>Ready to move</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="recovery">An off-day plan</label>
+                                        <select class="form-select" id="recovery" name="recovery">
+                                            <option>A slow walk</option>
+                                            <option>Gaming / CS2</option>
+                                            <option>A book or film</option>
+                                            <option>Time with someone</option>
+                                            <option>Simply resting</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="smallWin">One small win to aim for</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                <i class="bi bi-star" aria-hidden="true"></i>
+                                            </span>
+                                            <input
+                                                class="form-control"
+                                                id="smallWin"
+                                                name="smallWin"
+                                                type="text"
+                                                maxlength="120"
+                                                placeholder="Show up without judging the session"
+                                            />
+                                        </div>
+                                    </div>
+                                    <fieldset class="col-12">
+                                        <legend class="fs-6">When does movement fit best?</legend>
+                                        <div class="d-flex gap-4 flex-wrap">
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="time"
+                                                    id="morning"
+                                                    value="Morning"
+                                                />
+                                                <label class="form-check-label" for="morning">Morning</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="time"
+                                                    id="evening"
+                                                    value="Evening"
+                                                />
+                                                <label class="form-check-label" for="evening">Evening</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="time"
+                                                    id="flexible"
+                                                    value="Whenever it fits"
+                                                    checked
+                                                />
+                                                <label class="form-check-label" for="flexible">
+                                                    Whenever it fits
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="col-12">
+                                        <label class="form-label" for="notes">A note to yourself</label>
+                                        <textarea
+                                            class="form-control"
+                                            id="notes"
+                                            name="notes"
+                                            rows="4"
+                                            maxlength="1000"
+                                            placeholder="What would make this week feel a little easier?"
+                                        ></textarea>
+                                    </div>
+                                    <div class="col-12 form-check-wrap">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="permission"
+                                                name="permission"
+                                                required
+                                            />
+                                            <label class="form-check-label" for="permission">
+                                                I understand this plan will be saved only in this browser. *
+                                            </label>
+                                            <div class="invalid-feedback">Please confirm before saving.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
                             <div class="d-flex gap-3 flex-wrap mt-4">
                                 <button class="btn btn-primary" type="submit">
                                     <i class="bi bi-check2-circle" aria-hidden="true"></i>
