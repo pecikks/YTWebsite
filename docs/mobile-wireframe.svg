@@ -54,25 +54,26 @@
     <text x="520" y="200" class="label">Header / identity + navigation</text>
     <text x="520" y="232" class="body">Styled channel name and flower icon.</text>
     <text x="520" y="257" class="body">Hamburger opens all six page links.</text>
-    <text x="520" y="282" class="body">Menu stays collapsed on a smartphone.</text>
+    <text x="520" y="282" class="body">Sticky header with a light/dark button.</text>
     <line x1="445" y1="195" x2="467" y2="195" class="line" />
     <rect x="55" y="235" width="390" height="460" fill="#e1e1e1" stroke="#999" />
-    <path d="M55 235L445 695M445 235L55 695" stroke="#c4c4c4" />
-    <text x="80" y="285" class="small">A QUIETER KIND OF STRONG</text>
-    <text x="80" y="335" class="label">Train for your mind.</text>
-    <text x="80" y="368" class="label">The gains will follow.</text>
-    <text x="80" y="420" class="body">Short introduction to the channel.</text>
-    <text x="80" y="450" class="body">No perfect routines. No gym ego.</text>
-    <rect x="80" y="485" width="290" height="48" fill="#bbb" stroke="#999" />
-    <text x="103" y="516" class="body">Find your next watch</text>
-    <rect x="80" y="550" width="290" height="48" fill="#fff" stroke="#999" />
-    <text x="103" y="580" class="body">Meet TáltosGains</text>
+    <rect x="55" y="235" width="390" height="140" fill="#ccc" stroke="#999" />
+    <text x="80" y="310" class="body">Carousel photo</text>
+    <text x="80" y="395" class="small">A QUIETER KIND OF STRONG</text>
+    <text x="80" y="425" class="label">Train for your mind.</text>
+    <text x="80" y="453" class="label">The gains will follow.</text>
+    <text x="80" y="478" class="body">Short introduction to the channel.</text>
+    <text x="80" y="502" class="body">No perfect routines. No gym ego.</text>
+    <rect x="80" y="520" width="290" height="48" fill="#bbb" stroke="#999" />
+    <text x="103" y="551" class="body">Find your next watch</text>
+    <rect x="80" y="578" width="290" height="48" fill="#fff" stroke="#999" />
+    <text x="103" y="608" class="body">Meet TáltosGains</text>
     <text x="80" y="660" class="body">● ○ ○</text>
     <text x="310" y="660" class="body">Ⅱ ← →</text>
     <circle cx="485" cy="350" r="16" class="num" />
     <text x="480" y="356" class="numtext">2</text>
     <text x="520" y="355" class="label">Bootstrap carousel</text>
-    <text x="520" y="387" class="body">Three rotating photographs with text.</text>
+    <text x="520" y="387" class="body">Three rotating photos with captions below.</text>
     <text x="520" y="412" class="body">Headline, introduction and two actions.</text>
     <text x="520" y="437" class="body">Indicators, previous/next and pause.</text>
     <text x="520" y="462" class="body">Auto-play respects reduced motion.</text>
