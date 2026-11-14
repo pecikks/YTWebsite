@@ -68,7 +68,29 @@ function initMovementTable() {
     if (!document.getElementById('movementTable')) {
         return;
     }
-    new DataTable('#movementTable', {
+    const details = document.getElementById('movementDetails');
+    details.addEventListener('show.bs.modal', function (event) {
+        const cells = event.relatedTarget.closest('tr').cells;
+        document.getElementById('movementDetailsTitle').textContent = cells[1].firstChild.textContent.trim();
+        document.getElementById('movementPattern').textContent = cells[2].textContent;
+        document.getElementById('movementEquipment').textContent = cells[3].textContent;
+        document.getElementById('movementPurpose').textContent = cells[4].textContent;
+    });
+
+    const table = new DataTable('#movementTable', {
+        autoWidth: false,
+        columnDefs: [{targets: [0, 3, 4], className: 'movement-wide-column'}],
+        createdRow: function (row) {
+            const nameCell = row.cells[1];
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'btn btn-sm btn-outline-light movement-detail-button d-md-none';
+            button.textContent = 'Details';
+            button.setAttribute('aria-label', 'Details for ' + nameCell.textContent.trim());
+            button.setAttribute('data-bs-toggle', 'modal');
+            button.setAttribute('data-bs-target', '#movementDetails');
+            nameCell.appendChild(button);
+        },
         pageLength: 10,
         lengthMenu: [10, 25, 50, 100],
         order: [[0, 'asc']],
@@ -79,6 +101,48 @@ function initMovementTable() {
             infoEmpty: 'No matching ideas',
             zeroRecords: 'No movement found. Try “walk”, “band” or “carry”.',
         },
+    });
+    const filter = document.getElementById('patternFilter');
+    const clear = document.getElementById('clearMovementFilters');
+    // Read the visible cell text, so "&" is not shown as "&amp;".
+    const patterns = new Set(
+        table.column(2).nodes().toArray().map(function (cell) {
+            return cell.textContent.trim();
+        }),
+    );
+    Array.from(patterns).sort().forEach(function (pattern) {
+        filter.add(new Option(pattern, pattern));
+    });
+    document.getElementById('movementFilters').hidden = false;
+
+    filter.addEventListener('change', function () {
+        table.column(2).search(filter.value, {exact: true}).draw();
+    });
+
+    table.on('search', function () {
+        clear.hidden = !filter.value && !table.search();
+    });
+
+    clear.addEventListener('click', function () {
+        filter.value = '';
+        table.search('').column(2).search('').draw();
+        filter.focus();
+    });
+}
+
+function initVideoPreviews() {
+    document.querySelectorAll('.video-preview').forEach(function (button) {
+        button.hidden = false;
+        button.addEventListener('click', function () {
+            const template = button.nextElementSibling;
+            const player = template.content.querySelector('iframe').cloneNode(true);
+            const url = new URL(player.src);
+            url.searchParams.set('autoplay', '1');
+            player.src = url.href;
+            player.removeAttribute('loading');
+            button.replaceWith(player);
+            player.focus();
+        });
     });
 }
 
@@ -109,6 +173,11 @@ function initResetForm() {
     const storageKey = 'taltosgains-reset-v1';
     const status = document.getElementById('saveStatus');
     const summary = document.getElementById('savedSummary');
+    const continuePlan = document.getElementById('continueReset');
+    continuePlan.addEventListener('click', function (event) {
+        event.preventDefault();
+        form.elements.name.focus();
+    });
     const requiredFields = ['name', 'week', 'sessions', 'minutes', 'focus', 'recovery'];
 
     function setCurrentDate() {
@@ -129,6 +198,7 @@ function initResetForm() {
             ? 'A small win: ' + data.smallWin
             : 'Leave room to change the plan. Your pace is a good pace.';
         summary.hidden = false;
+        continuePlan.hidden = false;
     }
 
     function hasRequiredFields(plan) {
@@ -197,6 +267,7 @@ function initResetForm() {
             form.classList.remove('was-validated');
             setCurrentDate();
             summary.hidden = true;
+            continuePlan.hidden = true;
             status.textContent = 'Your saved plan has been cleared from this browser.';
         } catch {
             status.textContent = 'The browser could not clear storage. Please use your browser’s site-data settings.';
@@ -206,5 +277,6 @@ function initResetForm() {
 
 initCarousel();
 initMovementTable();
+initVideoPreviews();
 initVideoModal();
 initResetForm();
