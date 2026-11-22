@@ -4,7 +4,7 @@
 
 My YouTube channel: https://www.youtube.com/channel/UCNmZno0YKtLoGq7kh4Sr4HA
 
-The texts are based on my channel’s philosophy. The video descriptions are short summaries of each video’s theme.
+The texts are based on my channel's philosophy. The video descriptions are short summaries of each video's theme.
 
 ## Photos
 
