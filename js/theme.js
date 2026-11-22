@@ -14,7 +14,7 @@ try {
         applyTheme('light');
     }
 } catch {
-    // Keep the default theme when storage is unavailable.
+    // storage blocked, stay dark
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             localStorage.setItem(themeStorageKey, theme);
         } catch {
-            // The button still works for the current page.
+            // ignore, theme still works on this page
         }
     });
 });

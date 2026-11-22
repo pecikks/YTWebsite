@@ -1,8 +1,5 @@
 'use strict';
 
-// Each feature runs only on the page that contains it.
-// Wrapping them in functions keeps their variables out of the global scope.
-
 // Homepage carousel
 function initCarousel() {
     const carouselElement = document.getElementById('homeCarousel');
@@ -34,7 +31,7 @@ function initCarousel() {
         carousel.cycle();
     }
 
-    // Pause while the visitor hovers over or tabs into the slideshow.
+    // pause on hover / keyboard focus
     carouselElement.addEventListener('mouseenter', function () {
         carousel.pause();
     });
@@ -63,7 +60,7 @@ function initCarousel() {
     });
 }
 
-// Movement library table (DataTables)
+// Movement library table
 function initMovementTable() {
     if (!document.getElementById('movementTable')) {
         return;
@@ -97,14 +94,14 @@ function initMovementTable() {
         language: {
             search: 'Find a movement:',
             lengthMenu: 'Show _MENU_ ideas',
-            info: 'Showing _START_–_END_ of _TOTAL_ ideas',
+            info: 'Showing _START_-_END_ of _TOTAL_ ideas',
             infoEmpty: 'No matching ideas',
-            zeroRecords: 'No movement found. Try “walk”, “band” or “carry”.',
+            zeroRecords: 'No movement found. Try "walk", "band" or "carry".',
         },
     });
     const filter = document.getElementById('patternFilter');
     const clear = document.getElementById('clearMovementFilters');
-    // Read the visible cell text, so "&" is not shown as "&amp;".
+    // use cell text, otherwise & shows up as &amp;
     const patterns = new Set(
         table.column(2).nodes().toArray().map(function (cell) {
             return cell.textContent.trim();
@@ -146,7 +143,7 @@ function initVideoPreviews() {
     });
 }
 
-// Video details modal: the text comes from data attributes on each "Story notes" button.
+// Story notes modal
 function initVideoModal() {
     const modal = document.getElementById('videoModal');
     if (!modal) {
@@ -164,7 +161,7 @@ function initVideoModal() {
     });
 }
 
-// Reset form: Bootstrap validation and saving the plan in localStorage
+// Reset form + localStorage
 function initResetForm() {
     const form = document.getElementById('resetForm');
     if (!form) {
@@ -190,7 +187,7 @@ function initResetForm() {
 
     function showSummary(data) {
         const sessionWord = data.sessions === '1' ? 'session' : 'sessions';
-        document.getElementById('savedTitle').textContent = `${data.name}’s reset`;
+        document.getElementById('savedTitle').textContent = `${data.name}'s reset`;
         document.getElementById('summaryText').textContent =
             `Week of ${data.week}: ${data.sessions} movement ${sessionWord}, ${data.minutes} minutes each. ` +
             `Focus: ${data.focus.toLowerCase()}. Off-day plan: ${data.recovery.toLowerCase()}.`;
@@ -239,7 +236,6 @@ function initResetForm() {
         const nameField = form.elements.name;
         nameField.value = nameField.value.trim();
 
-        // Bootstrap shows the red/green styles and messages once "was-validated" is added.
         form.classList.add('was-validated');
         if (!form.checkValidity()) {
             status.textContent = 'Please check the highlighted fields.';
@@ -253,7 +249,7 @@ function initResetForm() {
         });
         try {
             localStorage.setItem(storageKey, JSON.stringify(data));
-            status.textContent = 'Saved on this device. A plan, not a contract — change it whenever you need.';
+            status.textContent = 'Saved on this device. You can change it whenever you need.';
             showSummary(data);
         } catch {
             status.textContent = 'This browser could not save your plan. Please enable site storage and try again.';
@@ -270,7 +266,7 @@ function initResetForm() {
             continuePlan.hidden = true;
             status.textContent = 'Your saved plan has been cleared from this browser.';
         } catch {
-            status.textContent = 'The browser could not clear storage. Please use your browser’s site-data settings.';
+            status.textContent = 'The browser could not clear storage. Please clear the site data in your browser settings.';
         }
     });
 }
