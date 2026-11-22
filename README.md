@@ -1,59 +1,46 @@
 # TáltosGains
 
-My semester project for OSU 7REWB: A responsive Bootstrap website for my YouTube channel about training, self-improvement and guilt-free recovery.
+My semester project for OSU 7REWB. It's a Bootstrap website for my YouTube channel TáltosGains - training, self-improvement and taking rest days without feeling guilty.
 
-## Open locally
+Live: https://pecikks.github.io/YTWebsite/
 
-Open `index.html` in a browser, or use PhpStorm’s browser preview. For the embedded videos and the saved form to work reliably, run a small local server from the project folder:
+## How to open it
+
+Just open `index.html` (I used PhpStorm's preview). The YouTube videos and the form saving work better through a local server:
 
 ```sh
-python3 -m http.server 8080 --bind 127.0.0.1
+python3 -m http.server 8080
 ```
 
-Then visit http://127.0.0.1:8080. No installation or build step is needed. Bootstrap, Bootstrap Icons, DataTables, jQuery and all photos are stored locally. Only the YouTube videos and links need an internet connection.
+and then go to http://localhost:8080. Bootstrap, the icons, DataTables, jQuery and the photos are all in the project, so only the videos need internet.
 
-## Assignment checklist
+## Pages
 
-| Requirement | Implementation |
-| --- | --- |
-| Logo / styled name | Flower icon, TáltosGains wordmark and tagline in the sticky header, with a light/dark mode button |
-| 5–7 functional menu pages | Six: Home, The story, Videos, Movement library, Off days, Your reset |
-| Bootstrap Carousel | Homepage: three photo slides with captions below the photos on narrow screens, indicators, arrows and a pause/play button |
-| Breadcrumbs | All five inner pages |
-| Comprehensive form | `reset.html`: 13 fields with labels, help text, a responsive grid, three input groups, Bootstrap validation messages and a Save button |
-| Required form types | Text, date, number, radio, checkbox, select, textarea |
-| DataTables with Bootstrap 5 | `movement.html`: 60 movements, 10/25/50/100 rows per page, search, a Pattern filter with a Clear button, and sortable columns. On phones, three columns are hidden and each row gets a Details button |
-| Buttons / icons | Primary, outline-primary, outline-light, secondary and link buttons in small, normal and large sizes; Bootstrap Icons in the menu and buttons |
-| Bootstrap modal | Two modals: four “Story notes” buttons on the Videos page, and the Details buttons in the movement table on phones |
-| At least three tabs | Off days page: Rest & reset, Outside time, Headspace |
-| Mobile wireframe + description | `docs/mobile-wireframe.svg` and `docs/wireframe.html`, with seven described sections |
-| Hosting URL TXT | `PROJECT_URL.txt` |
-| Submission ZIP | `submission/TaltosGains-local.zip`, rebuilt after every change |
+- **Home** (`index.html`) - carousel with 3 of my photos, short intro, three videos and a link to the form
+- **The story** (`about.html`) - why I started the channel
+- **Videos** (`videos.html`) - my four videos, each with a "Story notes" modal
+- **Movement library** (`movement.html`) - DataTable with 60 exercises (search, sorting, paging, filter by pattern)
+- **Off days** (`recovery.html`) - three tabs about rest
+- **Your reset** (`reset.html`) - the form for planning your week
 
-## Content and behavior
+## What's in it from the assignment
 
-- The channel name, philosophy, video titles and all photos are my own.
-- `videos.html` loads each YouTube player in a Bootstrap `ratio ratio-16x9` wrapper when its photo preview is clicked, each with a “Watch on YouTube” button.
-- The movement library is a general reference list of exercises, not a training plan. The Pattern filter lists the patterns found in the table; on phones, the Details modal shows the hidden columns (pattern, equipment and everyday purpose).
-- The form saves, restores and clears one plan in the browser’s localStorage (`taltosgains-reset-v1`). Nothing is sent anywhere. Once a plan is saved, a link takes you back to the form to keep editing it.
-- The light/dark button in the header switches the Bootstrap color theme. The choice is remembered across pages in localStorage (`taltosgains-theme`); dark is the default.
-- The homepage slideshow pauses on hover or keyboard focus, has a pause button, and does not auto-play when the visitor prefers reduced motion.
+- name with a logo icon at the top, menu with icons (6 pages)
+- carousel under the menu, breadcrumbs on every page except Home
+- form with 13 fields (text, date, number, select, radio, checkbox, textarea), input groups, validation and a Save button - the plan gets saved in localStorage
+- DataTable with 60 rows, Bootstrap 5 styling
+- different buttons (primary, outline, secondary, link, small/large)
+- 2 modals (story notes, exercise details on phones) and 3 tabs
+- mobile wireframe in `docs/mobile-wireframe.svg` (open `docs/wireframe.html` to see it)
+- URL of the website in `PROJECT_URL.txt`
 
-## Publishing with GitHub Pages
+Extra: light/dark mode button in the header (it remembers your choice).
 
-Website: https://pecikks.github.io/YTWebsite/
+## Files
 
-GitHub Pages publishes the `main` branch from the repository root. `.nojekyll` is included.
-
-## Rebuild the ZIP
-
-Run `python3 docs/package.py`. It leaves out Git history, IDE settings and the ZIP itself.
-
-## Main files
-
-- Six HTML pages with the content and shared navigation.
-- `style.css` holds the responsive theme.
-- `js/theme.js` holds the light/dark mode switch. It loads in the `<head>` so a saved light theme is applied before the page appears.
-- `js/site.js` holds the carousel controls, DataTables setup and Pattern filter, the movement Details modal, the video previews, the Story notes modal and form storage.
-- `docs/CREDITS.md` lists the libraries and image sources.
-- `docs/TESTING.md` lists what I tested.
+- `style.css` - all my styles
+- `js/site.js` - carousel, table, modals, video previews and the form
+- `js/theme.js` - light/dark mode
+- `docs/CREDITS.md` - libraries and photos
+- `docs/TESTING.md` - what I tested
+- `docs/package.py` - makes the ZIP for submitting (`python3 docs/package.py`)

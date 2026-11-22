@@ -9,6 +9,4 @@ submission/
 *.pem
 *.key
 .aws/
-.codex/
-.agents/
 __pycache__/

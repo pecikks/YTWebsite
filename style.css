@@ -1,4 +1,4 @@
-/* TáltosGains: dark editorial layout with a softer red accent. */
+/* TáltosGains - main styles */
 
 /* Colors and basic page styles */
 :root {
@@ -108,7 +108,7 @@ header {
 /* Header and navigation */
 .navbar {
     min-height: 104px;
-    /* Bootstrap navbar variables: menu link colors and spacing */
+    /* Bootstrap navbar variables: menu link colors and spaacing */
     --bs-navbar-color: #caccc4;
     --bs-navbar-hover-color: var(--paper);
     --bs-navbar-active-color: var(--accent);
@@ -250,7 +250,7 @@ header {
     top: 12px;
 }
 
-/* ":root" raises specificity so this beats Bootstrap's ".btn:focus-visible" without !important */
+/* ":root" raises specificity so this beats Bootstrap's ".btn:focus-visible" without !important (I hope)*/
 :root :focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 4px;
@@ -649,7 +649,7 @@ header {
 .nav-tabs {
     border-color: var(--line);
     gap: 8px;
-    /* Bootstrap nav variables: tab colors and spacing */
+    /* tab colors + spacing */
     --bs-nav-link-padding-x: 15px;
     --bs-nav-link-padding-y: 14px;
     --bs-nav-link-color: #caccc4;
@@ -1062,7 +1062,7 @@ footer p {
     }
 }
 
-/* Photo framing: keep the subject visible in each image. */
+/* Photo framing */
 .photo-starting-over {
     object-position: center 57%;
 }
@@ -1151,7 +1151,7 @@ footer p {
     color: #fff;
 }
 
-/* Keep text and controls legible over the carousel photos. */
+/* Light mode: carousel text */
 [data-bs-theme="light"] #homeCarousel {
     --paper: #f1eee7;
 }
@@ -1191,7 +1191,7 @@ footer p {
     --bs-btn-hover-color: #171917;
 }
 
-/* Keep the movement table readable on narrow screens. */
+/* Movement table on small screens */
 @media (max-width: 767.98px) {
     #movementTable .movement-wide-column {
         display: none;
